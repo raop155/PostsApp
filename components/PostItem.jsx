@@ -4,7 +4,9 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 const PostItem = ({ title, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.text}>{title}</Text>
+      <Text numberOfLines={2} style={styles.text}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };

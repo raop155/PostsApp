@@ -4,6 +4,8 @@ import { PostItem } from '../components';
 
 const PostsScreen = ({ navigation }) => {
   const userId = navigation.getParam('userId');
+  const userName = navigation.getParam('userName');
+
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
@@ -36,7 +38,7 @@ const PostsScreen = ({ navigation }) => {
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <PostItem
-              onPress={() => navigation.navigate('Detail', { userId: item.id })}
+              onPress={() => navigation.navigate('Detail', { ...item, userId, userName })}
               {...item}
             />
           )}

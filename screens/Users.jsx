@@ -35,7 +35,7 @@ const UsersScreen = ({ navigation }) => {
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <UserItem
-              onPress={() => navigation.navigate('Posts', { userId: item.id })}
+              onPress={() => navigation.navigate('Posts', { userId: item.id, userName: item.name })}
               name={item.name}
             />
           )}
